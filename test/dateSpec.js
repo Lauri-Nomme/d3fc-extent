@@ -73,4 +73,9 @@ describe('linear', () => {
         dateExtent().accessors([d => [d, d]])([date]);
         expect(date.valueOf).toHaveBeenCalled();
     });
+
+    it('should handle null dates', function() {
+        const date = null;
+        dateExtent().accessors([d => d])([date]);
+    });
 });
